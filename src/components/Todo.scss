@@ -1,0 +1,52 @@
+.container {
+    padding: 10px;
+}
+
+.container_deadline {
+    composes: container;
+
+    border-left: 2px solid red;
+}
+
+.root {
+    user-select: none;
+    cursor: default;
+    box-sizing: border-box;
+    margin-left: 30px;
+}
+
+.completed {
+    composes: root;
+
+    text-decoration: line-through;
+    font-style: italic;
+    color: lightgrey;
+}
+
+.icon {
+    margin-right: 10px;
+    cursor: pointer;
+    float: left;
+}
+
+.icon_completed {
+    composes: icon;
+
+    color: lightgrey;
+}
+
+.edit_mode {
+    outline: none;
+    max-width: 94%;
+    min-width: 94%;
+}
+
+.date {
+    font-size: 10px;
+    font-family: sans-serif;
+    color: lightgrey;
+}
+
+.tag {
+    color: darkblue;
+}

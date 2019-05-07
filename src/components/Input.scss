@@ -1,0 +1,22 @@
+.clearfix::after {
+    content: '';
+    clear: both;
+    display: table;
+}
+
+.root {
+    width: 100%;
+}
+
+.input_text {
+    width: 100%;
+    border: 0;
+    padding: 16px;
+    border-bottom: 1px solid lightgrey;
+}
+
+.input_date {
+    float: right;
+    margin-bottom: 10px;
+}
+
