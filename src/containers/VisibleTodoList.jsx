@@ -16,19 +16,8 @@ function filterTodos(todos, filter) {
 
 function searchTodos(todos, search) {
     return todos.filter(todo => {
-        if (search.text !== '' && search.tags === null) {
+        if (search.text !== '') {
             return todo.text.search(new RegExp('' + search.text + '', 'ig')) !== -1
-        } else if (search.text === '' && search.tags !== null) {
-            const searchTags = search.tags.join(' ');
-            const todoTags = todo.tags.join(' ');
-
-            return todoTags.search(new RegExp('' + searchTags + '', 'igm')) !== -1
-        } else if (search.text !== '' && search.tags !== null) {
-            const searchTags = search.tags.join(' ');
-            const todoTags = todo.tags.join(' ');
-
-            return todo.text.search(new RegExp('' + search.text + '', 'ig')) !== -1
-            && todoTags.search(new RegExp('' + searchTags + '', 'igm')) !== -1
         }
     })
 }
@@ -36,7 +25,7 @@ function searchTodos(todos, search) {
 const mapStateToProps = state => {
     return {
         todos:
-            state.search.text !== '' || state.search.tags !== null
+            state.search.text !== ''
                 ? searchTodos(state.todos, state.search)
                 : filterTodos(state.todos, state.filter)
     }

@@ -79,17 +79,15 @@ export default class Todo extends Component {
                         icon='pen'
                         onClick={this.handleEdit}
                     />
-                    <div
-                        className={completed ? styles.completed : styles.root}
-                        onClick={this.handleToggle}
-                        onContextMenu={this.handleDelete}
-                        id='forTag'
+                    <div className={completed ? styles.completed : styles.root}
+                         onClick={this.handleToggle}
+                         onContextMenu={this.handleDelete}
+                         id='forTag'
                     >
                         <div className={styles.date}>{dueDate}</div>
-                        {text}
-                        <div className={styles.tag}>
-                            {tags.join(' ')}
-                        </div>
+                        { text }
+
+                        {/*<div className={styles.tag}> { tags.join(' ') } </div>*/}
                     </div>
                 </div>
             );
